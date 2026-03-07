@@ -11,6 +11,7 @@ void reverse(int arr[], int size)
     arr[size - 1] = temp;
     reverse(arr + 1, size - 2);
 }
+
 int main()
 {
     int arr[6] = {1, 6, 2, 4, 5, 7};
