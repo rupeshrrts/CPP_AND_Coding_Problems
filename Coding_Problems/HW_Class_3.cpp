@@ -31,6 +31,7 @@
 
 // HW Problem_7
 // Print every string that has equal number of a and b
+
 #include <iostream>
 using namespace std;
 void Generate(string s, int a, int b)
