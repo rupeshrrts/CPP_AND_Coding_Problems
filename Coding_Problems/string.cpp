@@ -38,8 +38,12 @@ int main()
 
     // array of string
 
-    string *ptr = new string;     // ek string ka object
-    string *ptr = new string[10]; // string of array
-    ptr[0] = "Rupesh";
-    ptr[1] = "Kuamr";
+    // string *ptr = new string;     // ek string ka object
+    // string *ptr = new string[10]; // string of array
+    // ptr[0] = "Rupesh";
+    // ptr[1] = "Kuamr";
+
+    string input = "abcde";
+    string s7 = input.substr(1);
+    cout << s7; // bcde
 }
