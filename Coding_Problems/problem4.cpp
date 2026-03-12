@@ -2,6 +2,25 @@
 // o/p=abcbd
 // i/p =""
 // o/p =
+
+
+// // basic way
+// #include<iostream>
+// using namespace std;
+// int main(){
+    
+//     string str="Rupeshpds";
+//     string result="";
+    
+//     for(int i=0;i<str.length();i++){
+//         if(str[i]!='s'){
+//             result=result+str[i];
+//         }
+//     }
+//     cout<<result;
+// }
+
+
 // #include <iostream>
 // #include <cstring>
 // using namespace std;
@@ -25,7 +44,6 @@
 //         replace(input + 1);
 //     }
 // }
-
 // int main()
 // {
 //     char input[100];
@@ -33,6 +51,31 @@
 //     cin >> input;
 //     replace(input);
 //     cout << input << endl;
+// }
+
+
+
+// to replace a char with other string
+// #include<iostream>
+// using namespace std;
+// int main(){
+    
+//     string str="Rupeshpds";
+//     string result="";
+//     string str2="aaa";
+    
+//     for(int i=0;i<str.length();i++){
+//         if(str[i]=='s'){
+//             result=result+str2;
+//         }
+//         else{
+//             result=result+str[i];
+//         }
+//         // if(str[i]!='s'){
+//         //     result=result+str[i];
+//         // }
+//     }
+//     cout<<result;
 // }
 
 // // replace every occrrence with x--> aam
@@ -72,52 +115,50 @@
 //     cout << input << endl;
 // }
 
-// generalized code
-//  replace every occrrence with x--> aam
-#include <iostream>
-#include <cstring>
-using namespace std;
 
-void replace(char input[], char s, const char str[])
-{
-    int l1 = strlen(input);
-    int l2 = strlen(str);
+// // generalized code
+// //  replace every occrrence with x--> aam
+// #include <iostream>
+// #include <cstring>
+// using namespace std;
 
-    if (l1 == 0)
-    {
-        return;
-    }
+// void replace(char input[], char s, const char str[])
+// {
+//     int l1 = strlen(input);
+//     int l2 = strlen(str);
 
-    if (input[0] == s)
-    {
-        // shift characters
-        for (int i = l1; i >= 0; i--)
-        {
-            input[i + l2 - 1] = input[i];
-        }
+//     if (l1 == 0)
+//     {
+//         return;
+//     }
 
-        // insert replacement string
-        for (int i = 0; i < l2; i++)
-        {
-            input[i] = str[i];
-        }
+//     if (input[0] == s)
+//     {
+//         // shift characters
+//         for (int i = l1; i >= 0; i--)
+//         {
+//             input[i + l2 - 1] = input[i];
+//         }
+//         // insert replacement string
+//         for (int i = 0; i < l2; i++)
+//         {
+//             input[i] = str[i];
+//         }
 
-        replace(input + l2, s, str);
-    }
-    else
-    {
-        replace(input + 1, s, str);
-    }
-}
+//         replace(input + l2, s, str);
+//     }
+//     else
+//     {
+//         replace(input + 1, s, str);
+//     }
+// }
 
-int main()
-{
-    char input[100];
+// int main()
+// {
 
-    cout << "Enter the string: ";
-    cin >> input;
-
-    replace(input, 'x', "ram");
-
-    cout << input << endl;
-}
+//     char input[100];
+//     cout << "Enter the string: ";
+//     cin >> input;
+//     replace(input, 'x', "ram");
+//     cout << input << endl;
+// }
