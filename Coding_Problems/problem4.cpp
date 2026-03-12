@@ -35,6 +35,26 @@
 //     cout << input << endl;
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     string str;
+//     cout << "Enter the string ";
+//     cin >> str;
+//     // string str = "Rupeshpfgh";
+//     string result = "";
+//     for (int i = 0; i < str.length(); i++)
+//     {
+//         if (str[i] != 'p')
+//         {
+//             result = result + str[i];
+//         }
+//     }
+//     cout << result;
+// }
+
 // // replace every occrrence with x--> aam
 // #include <iostream>
 // #include <cstring>
@@ -74,50 +94,49 @@
 
 // generalized code
 //  replace every occrrence with x--> aam
-#include <iostream>
-#include <cstring>
-using namespace std;
+// #include <iostream>
+// #include <cstring>
+// using namespace std;
 
-void replace(char input[], char s, const char str[])
-{
-    int l1 = strlen(input);
-    int l2 = strlen(str);
+// void replace(char input[], char s, const char str[])
+// {
+//     int l1 = strlen(input);
+//     int l2 = strlen(str);
 
-    if (l1 == 0)
-    {
-        return;
-    }
+//     if (l1 == 0)
+//     {
+//         return;
+//     }
+//     if (input[0] == s)
+//     {
+//         // shift characters
+//         for (int i = l1; i >= 0; i--)
+//         {
+//             input[i + l2 - 1] = input[i];
+//         }
 
-    if (input[0] == s)
-    {
-        // shift characters
-        for (int i = l1; i >= 0; i--)
-        {
-            input[i + l2 - 1] = input[i];
-        }
+//         // insert replacement string
+//         for (int i = 0; i < l2; i++)
+//         {
+//             input[i] = str[i];
+//         }
 
-        // insert replacement string
-        for (int i = 0; i < l2; i++)
-        {
-            input[i] = str[i];
-        }
+//         replace(input + l2, s, str);
+//     }
+//     else
+//     {
+//         replace(input + 1, s, str);
+//     }
+// }
 
-        replace(input + l2, s, str);
-    }
-    else
-    {
-        replace(input + 1, s, str);
-    }
-}
+// int main()
+// {
+//     char input[100];
 
-int main()
-{
-    char input[100];
+//     cout << "Enter the string: ";
+//     cin >> input;
 
-    cout << "Enter the string: ";
-    cin >> input;
+//     replace(input, 'x', "ram");
 
-    replace(input, 'x', "ram");
-
-    cout << input << endl;
-}
+//     cout << input << endl;
+// }
