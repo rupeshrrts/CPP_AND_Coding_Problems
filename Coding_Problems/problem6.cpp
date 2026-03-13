@@ -1,5 +1,5 @@
 // // return all subsequence of the given string
-
+// input : abc   output : "" ,a,b,c,ab,ac,bc,abc
 // #include <iostream>
 // using namespace std;
 // // int subseq(string input, string output[]) // array dikahne  ke liye [ ] eski need hai na ki ek string dikhane ke li wahi agr char input hota to input[ ] dikhana padta bcs char ka array bnta
@@ -59,33 +59,33 @@
 //     }
 // }
 
-// // 2nd way
-// // print all the subsequences
-// #include <iostream>
-// using namespace std;
+// 2nd way
+// print all the subsequences
+#include <iostream>
+using namespace std;
 
-// void subseq(string original, string tillNow)
-// {
-//     if (original.size() == 0)
-//     {
-//         cout << tillNow << endl;
-//         return;
-//     }
+void subseq(string original, string tillNow)
+{
+    if (original.size() == 0)
+    {
+        cout << tillNow << endl;
+        return;
+    }
 
-//     // include first character
-//     subseq(original.substr(1), tillNow + original[0]);
+    // include first character
+    subseq(original.substr(1), tillNow + original[0]);
 
-//     // exclude first character
-//     subseq(original.substr(1), tillNow);
-// }
+    // exclude first character
+    subseq(original.substr(1), tillNow);
+}
 
-// int main()
-// {
-//     string original;
-//     cin >> original;
+int main()
+{
+    string original;
+    cin >> original;
 
-//     subseq(original, "");
-// }
+    subseq(original, "");
+}
 
 // // 2nd way
 // //  print all the subsequences
@@ -115,36 +115,36 @@
 //     subseq(0, original, "");
 // }
 
-// 2nd way
-#include <iostream>
-#include <vector>
-using namespace std;
+// // 2nd way
+// #include <iostream>
+// #include <vector>
+// using namespace std;
 
-void subseq(string original, string tillNow, vector<string> &v)
-{
-    if (original.size() == 0)
-    {
-        v.push_back(tillNow);
-        return;
-    }
+// void subseq(string original, string tillNow, vector<string> &v)
+// {
+//     if (original.size() == 0)
+//     {
+//         v.push_back(tillNow);
+//         return;
+//     }
 
-    // include first character
-    subseq(original.substr(1), tillNow + original[0], v);
+//     // include first character
+//     subseq(original.substr(1), tillNow + original[0], v);
 
-    // exclude first character
-    subseq(original.substr(1), tillNow, v);
-}
+//     // exclude first character
+//     subseq(original.substr(1), tillNow, v);
+// }
 
-int main()
-{
-    vector<string> v;
-    string original;
-    cin >> original;
+// int main()
+// {
+//     vector<string> v;
+//     string original;
+//     cin >> original;
 
-    subseq(original, "", v);
+//     subseq(original, "", v);
 
-    for (int i = 0; i < v.size(); i++)
-    {
-        cout << v[i] << endl;
-    }
-}
+//     for (int i = 0; i < v.size(); i++)
+//     {
+//         cout << v[i] << endl;
+//     }
+// }

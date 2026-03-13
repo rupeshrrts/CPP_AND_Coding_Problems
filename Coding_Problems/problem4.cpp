@@ -2,6 +2,23 @@
 // o/p=abcbd
 // i/p =""
 // o/p =
+
+// // basic way
+// #include<iostream>
+// using namespace std;
+// int main(){
+
+//     string str="Rupeshpds";
+//     string result="";
+
+//     for(int i=0;i<str.length();i++){
+//         if(str[i]!='s'){
+//             result=result+str[i];
+//         }
+//     }
+//     cout<<result;
+// }
+
 // #include <iostream>
 // #include <cstring>
 // using namespace std;
@@ -25,7 +42,6 @@
 //         replace(input + 1);
 //     }
 // }
-
 // int main()
 // {
 //     char input[100];
@@ -35,24 +51,27 @@
 //     cout << input << endl;
 // }
 
-// #include <iostream>
+// to replace a char with other string
+// #include<iostream>
 // using namespace std;
+// int main(){
 
-// int main()
-// {
-//     string str;
-//     cout << "Enter the string ";
-//     cin >> str;
-//     // string str = "Rupeshpfgh";
-//     string result = "";
-//     for (int i = 0; i < str.length(); i++)
-//     {
-//         if (str[i] != 'p')
-//         {
-//             result = result + str[i];
+//     string str="Rupeshpds";
+//     string result="";
+//     string str2="aaa";
+
+//     for(int i=0;i<str.length();i++){
+//         if(str[i]=='s'){
+//             result=result+str2;
 //         }
+//         else{
+//             result=result+str[i];
+//         }
+//         // if(str[i]!='s'){
+//         //     result=result+str[i];
+//         // }
 //     }
-//     cout << result;
+//     cout<<result;
 // }
 
 // // replace every occrrence with x--> aam
