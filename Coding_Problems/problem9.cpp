@@ -31,6 +31,11 @@
 //         cin >> arr[i];
 //     }
 
+//     //  vector<int> arr(n);
+
+//     // for(int i=0;i<n;i++)
+//     //     cin>>arr[i];
+
 //     vector<vector<int>> ans;
 //     vector<int> curr;
 
@@ -47,32 +52,32 @@
 //     }
 // }
 
-// 2. write all the permutation of the given string
-#include <iostream>
-#include <vector>
-using namespace std;
-void permute(int index, string input, vector<string> &ans)
-{
-    if (index == input.size())
-    {
-        ans.push_back(input);
-        return;
-    }
-    for (int j = index; j < input.size(); j++)
-    {
-        swap(input[index], input[j]);
-        permute(index + 1, input, ans);
-        swap(input[index], input[j]);
-    }
-}
-int main()
-{
-    string input;
-    cin >> input;
-    vector<string> ans;
-    permute(0, input, ans);
-    for (auto elem : ans)
-    {
-        cout << elem << endl;
-    }
-}
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+
+//     vector<int> arr(n);
+
+//     for (int i = 0; i < n; i++)
+//         cin >> arr[i];
+
+//     int total = 1 << n; // 2^n
+
+//     for (int mask = 0; mask < total; mask++)
+//     {
+//         cout << "{ ";
+
+//         for (int i = 0; i < n; i++)
+//         {
+//             if (mask & (1 << i))
+//                 cout << arr[i] << " ";
+//         }
+
+//         cout << "}" << endl;
+//     }
+// }

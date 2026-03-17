@@ -47,3 +47,48 @@ int main()
     string s7 = input.substr(1);
     cout << s7; // bcde
 }
+
+// Benefit of Dynamic Allocation
+// 1️⃣ Size decided at runtime
+
+// You don't need to know the size beforehand.
+
+// int n;
+// cin >> n;
+
+// int *arr = new int[n];
+
+// Example:
+
+// Input
+
+// 100000
+
+// The program still works.
+
+// 2️⃣ Stack memory limit problem avoided
+
+// Normal arrays are stored in stack memory, which is small.
+
+// Example:
+
+// int arr[10000000];   // may cause stack overflow
+
+// Dynamic arrays are stored in heap memory, which is larger.
+
+// 3️⃣ Flexible memory usage
+
+// Memory can be created and destroyed when needed.
+
+// delete[] arr;
+
+// This frees the memory.
+
+// Problems With Dynamic Arrays
+// 1️⃣ Memory leak risk
+
+// If you forget:
+
+// delete[] arr;
+
+// Memory stays occupied.

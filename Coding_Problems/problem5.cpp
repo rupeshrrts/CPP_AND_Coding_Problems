@@ -1,60 +1,112 @@
-// remove contigious duplicate char
-// git init
-// git add .
-// git commit -m "update feature"
-// git pull origin main    // to
-// git push origin main
 
-#include <iostream>
-using namespace std;
-int main()
-{
-
-    string str = "Ruppeeeeeesshhftf";
-    string result = "";
-    for (int i = 0; i < str.size(); i++) // str.size()=== str.length()
-    {
-        if (str[i] == str[i + 1])
-        {
-            str[i] = str[i + 1];
-        }
-        else
-        {
-            result += str[i];
-        }
-    }
-    cout << result;
-}
-
+// // to replace a char with other string
 // #include <iostream>
 // using namespace std;
+// int main()
+// {
+//     string str = "Rupeshpds";
+//     string result = "";
+//     string str2 = "XXX";
+
+//     for (int i = 0; i < str.length(); i++)
+//     {
+//         if (str[i] == 's')
+//         {
+//             result = result + str2;
+//         }
+//         else
+//         {
+//             result = result + str[i];
+//         }
+//         // if(str[i]!='s'){
+//         //     result=result+str[i];
+//         // }
+//     }
+//     cout << result;
+// }
+
+// // replace every occrrence with x--> aam
+// #include <iostream>
 // #include <cstring>
-// void remove(char input[])
+// using namespace std;
+// void replace(char input[])
 // {
 //     int l = strlen(input);
-//     if (l == 0 || l == 1)
+//     if (l == 0)
 //     {
 //         return;
 //     }
-//     else if (input[0] == input[1])
+//     if (input[0] == 'x')
 //     {
-//         for (int i = 1; i <= l; i++)
+//         for (int i = l; i > 0; i--)
 //         {
-//             input[i - 1] = input[i];
+//             input[i + 2] = input[i];
 //         }
-//         remove(input);
+//         input[0] = 'r';
+//         input[1] = 'a';
+//         input[2] = 'm';
+//         replace(input + 3);
 //     }
-//     else
+//     else // if first chsr is not 'x'
 //     {
-//         remove(input + 1);
+//         replace(input + 1);
 //     }
 // }
 
 // int main()
 // {
 //     char input[100];
-//     cout << "Enter String: " << endl;
+//     cout << "Enter the char: " << endl;
 //     cin >> input;
-//     remove(input);
+//     replace(input);
+//     cout << input << endl;
+// }
+
+// generalized code
+//  replace every occrrence with x--> aam
+// #include <iostream>
+// #include <cstring>
+// using namespace std;
+
+// void replace(char input[], char s, const char str[])
+// {
+//     int l1 = strlen(input);
+//     int l2 = strlen(str);
+
+//     if (l1 == 0)
+//     {
+//         return;
+//     }
+//     if (input[0] == s)
+//     {
+//         // shift characters
+//         for (int i = l1; i >= 0; i--)
+//         {
+//             input[i + l2 - 1] = input[i];
+//         }
+
+//         // insert replacement string
+//         for (int i = 0; i < l2; i++)
+//         {
+//             input[i] = str[i];
+//         }
+
+//         replace(input + l2, s, str);
+//     }
+//     else
+//     {
+//         replace(input + 1, s, str);
+//     }
+// }
+
+// int main()
+// {
+//     char input[100];
+
+//     cout << "Enter the string: ";
+//     cin >> input;
+
+//     replace(input, 'x', "ram");
+
 //     cout << input << endl;
 // }

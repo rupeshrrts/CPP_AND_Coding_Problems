@@ -1,150 +1,81 @@
-// // return all subsequence of the given string
-// input : abc   output : "" ,a,b,c,ab,ac,bc,abc
+
+// remove contigious duplicate char
+// git init
+// git add .
+// git commit -m "update feature"
+// git pull origin main    // to
+// git push origin main
+
+// // remove consicutive duplicate
 // #include <iostream>
 // using namespace std;
-// // int subseq(string input, string output[]) // array dikahne  ke liye [ ] eski need hai na ki ek string dikhane ke li wahi agr char input hota to input[ ] dikhana padta bcs char ka array bnta
-
-// // output[] wala esliye array bna hai bcs esme multiple string aayega so ye string ka array bna hai ahe esme v ek string aata to array nhibnta
-// int subseq(string input, string output[])
-// {
-//     if (input.size() == 0)
-//     {
-//         output[0] = "";
-//         return 1;
-//     }
-
-//     int smallSize = subseq(input.substr(1), output); //'abcd' then return after this substr(1) 'bcd'
-//     for (int i = 0; i < smallSize; i++)
-//     {
-//         output[i + smallSize] = input[0] + output[i];
-//     }
-//     return 2 * smallSize;
-// }
 // int main()
 // {
-//     string input;
+
+//     string str = "Ruppeeeeeesshhftff";
+//     string result = "";
+//     for (int i = 0; i < str.size(); i++) // str.size()=== str.length()
+//     {
+//         if (str[i] == str[i + 1])
+//         {
+//             str[i] = str[i + 1];
+//         }
+//         else
+//         {
+//             result += str[i];
+//         }
+//     }
+//     cout << result;
+// }
+// // other way
+// #include <iostream>
+// #include <unordered_set>
+// using namespace std;
+
+// int main()
+// {
+//     string str = "programming";
+//     unordered_set<char> s;
+
+//     for (char c : str)
+//     {
+//         if (s.find(c) == s.end())
+//         {
+//             cout << c;
+//             s.insert(c);
+//         }
+//     }
+// }
+
+// #include <iostream>
+// using namespace std;
+// #include <cstring>
+// void remove(char input[])
+// {
+//     int l = strlen(input);
+//     if (l == 0 || l == 1)
+//     {
+//         return;
+//     }
+//     else if (input[0] == input[1])
+//     {
+//         for (int i = 1; i <= l; i++)
+//         {
+//             input[i - 1] = input[i];
+//         }
+//         remove(input);
+//     }
+//     else
+//     {
+//         remove(input + 1);
+//     }
+// }
+
+// int main()
+// {
+//     char input[100];
+//     cout << "Enter String: " << endl;
 //     cin >> input;
-//     string *output = new string[100];
-//     int count = subseq(input, output);
-//     for (int i = 0; i < count; i++)
-//     {
-//         cout << output[i] << endl;
-//     }
-// }
-
-// // 2nd way
-// // return all subsequence of the given string
-// #include <iostream>
-// using namespace std;
-// int subseq(string original, string tillNow[])
-// {
-//     if (original.size() == 0)
-//     {
-//         cout << tillNow << " ";
-//     }
-
-//     subseq(original.substr(1), tillNow + original[0]); // when select a
-//     subseq(original.substr(1), tillNow);               // when not select a
-// }
-// int main()
-// {
-//     string original;
-//     cin >> original;
-//     string *tillNow = new string[100];
-//     int count = subseq(original, tillNow);
-//     // to print all string in tillNow
-//     for (int i = 0; i < count; i++)
-//     {
-//         cout << tillNow[i] << endl;
-//     }
-// }
-
-// 2nd way
-// print all the subsequences
-#include <iostream>
-using namespace std;
-
-void subseq(string original, string tillNow)
-{
-    if (original.size() == 0)
-    {
-        cout << tillNow << endl;
-        return;
-    }
-
-    // include first character
-    subseq(original.substr(1), tillNow + original[0]);
-
-    // exclude first character
-    subseq(original.substr(1), tillNow);
-}
-
-int main()
-{
-    string original;
-    cin >> original;
-
-    subseq(original, "");
-}
-
-// // 2nd way
-// //  print all the subsequences
-// #include <iostream>
-// using namespace std;
-
-// void subseq(int index, string original, string tillNow)
-// {
-//     if (original.size() == 0)
-//     {
-//         cout << tillNow << endl;
-//         return;
-//     }
-
-//     // include first character
-//     subseq(index + 1, original.substr(1), tillNow + original[0]);
-
-//     // exclude first character
-//     subseq(index + 1, original.substr(1), tillNow);
-// }
-
-// int main()
-// {
-//     string original;
-//     cin >> original;
-
-//     subseq(0, original, "");
-// }
-
-// // 2nd way
-// #include <iostream>
-// #include <vector>
-// using namespace std;
-
-// void subseq(string original, string tillNow, vector<string> &v)
-// {
-//     if (original.size() == 0)
-//     {
-//         v.push_back(tillNow);
-//         return;
-//     }
-
-//     // include first character
-//     subseq(original.substr(1), tillNow + original[0], v);
-
-//     // exclude first character
-//     subseq(original.substr(1), tillNow, v);
-// }
-
-// int main()
-// {
-//     vector<string> v;
-//     string original;
-//     cin >> original;
-
-//     subseq(original, "", v);
-
-//     for (int i = 0; i < v.size(); i++)
-//     {
-//         cout << v[i] << endl;
-//     }
+//     remove(input);
+//     cout << input << endl;
 // }
