@@ -176,11 +176,13 @@
 //     return 0;
 // }
 
-// column - wise
+
+// by vector
 #include <iostream>
+#include <vector>
 using namespace std;
 
-bool isSafe(int row, int col, int n, int board[][20])
+bool isSafe(int row, int col, int n, vector<vector<int>> &board)
 {
     int duprow = row;
     int dupcol = col;
@@ -189,9 +191,8 @@ bool isSafe(int row, int col, int n, int board[][20])
     while (row >= 0 && col >= 0)
     {
         if (board[row][col] == 1)
-        {
             return false;
-        }
+
         row--;
         col--;
     }
@@ -203,9 +204,8 @@ bool isSafe(int row, int col, int n, int board[][20])
     while (col >= 0)
     {
         if (board[row][col] == 1)
-        {
             return false;
-        }
+
         col--;
     }
 
@@ -216,9 +216,8 @@ bool isSafe(int row, int col, int n, int board[][20])
     while (row < n && col >= 0)
     {
         if (board[row][col] == 1)
-        {
             return false;
-        }
+
         row++;
         col--;
     }
@@ -226,12 +225,11 @@ bool isSafe(int row, int col, int n, int board[][20])
     return true;
 }
 
-void solve(int col, int n, int board[][20])
+void solve(int col, int n, vector<vector<int>> &board)
 {
-    // base case
     if (col == n)
     {
-        // print the board
+        // print solution
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
@@ -243,22 +241,28 @@ void solve(int col, int n, int board[][20])
         cout << endl;
         return;
     }
+
     for (int row = 0; row < n; row++)
     {
         if (isSafe(row, col, n, board))
         {
             board[row][col] = 1;
+
             solve(col + 1, n, board);
-            board[row][col] = 0; // for undo (backtracking)
+
+            board[row][col] = 0; // backtrack
         }
     }
 }
 
 int main()
 {
-    int board[20][20] = {0};
     int n;
     cin >> n;
+
+    vector<vector<int>> board(n, vector<int>(n, 0));
+
     solve(0, n, board);
+
     return 0;
 }
