@@ -46,6 +46,20 @@ int main()
     string input = "abcde";
     string s7 = input.substr(1);
     cout << s7; // bcde
+
+    string temp;
+    temp += 'a';
+    cout << temp << endl;
+    temp += 'b';
+    cout << temp;
+
+    string input = "ilike";
+
+    for (int i = 1; i <= input.size(); i++)
+    {
+        string prefix = input.substr(0, i); // o means start from 0 and i means kitna element if i =1 means 0 se 1 char lena hai
+        cout << prefix << endl;
+    }
 }
 
 // Benefit of Dynamic Allocation

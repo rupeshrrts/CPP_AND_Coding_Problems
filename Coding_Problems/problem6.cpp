@@ -27,25 +27,26 @@
 //     }
 //     cout << result;
 // }
-// // other way
-// #include <iostream>
-// #include <unordered_set>
-// using namespace std;
 
-// int main()
-// {
-//     string str = "programming";
-//     unordered_set<char> s;
+// other way
+#include <iostream>
+#include <unordered_set>
+using namespace std;
 
-//     for (char c : str)
-//     {
-//         if (s.find(c) == s.end())
-//         {
-//             cout << c;
-//             s.insert(c);
-//         }
-//     }
-// }
+int main()
+{
+    string str = "programming";
+    unordered_set<char> s;
+
+    for (char c : str)
+    {
+        if (s.find(c) == s.end())
+        {
+            cout << c;
+            s.insert(c);
+        }
+    }
+}
 
 // #include <iostream>
 // using namespace std;

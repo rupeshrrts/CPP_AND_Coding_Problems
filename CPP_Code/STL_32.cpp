@@ -474,27 +474,99 @@
 //     }
 // }
 
-// Use of  in STL
-#include <iostream>
-#include <vector>
+// // Use of  in STL
+// #include <iostream>
+// #include <vector>
 
-using namespace std;
-int main()
-{
-    vector<vector<int>> v; // in vector
-    vector<int> v1 = {3, 4, 5, 6, 2, 4};
-    v.push_back(v1);
-    vector<int> v2 = {7, 8, 9, 6};
-    v.push_back(v2);
-    vector<int> v3 = {10, 11};
-    v.push_back(v3);
+// using namespace std;
+// int main()
+// {
+//     vector<vector<int>> v; // in vector
+//     vector<int> v1 = {3, 4, 5, 6, 2, 4};
+//     v.push_back(v1);
+//     vector<int> v2 = {7, 8, 9, 6};
+//     v.push_back(v2);
+//     vector<int> v3 = {10, 11};
+//     v.push_back(v3);
 
-    for (int i = 0; i < v.size(); i++)
-    {
-        for (int j = 0; j < v[i].size(); j++)
-        {
-            cout << v[i][j] << " ";
-        }
-        cout << endl;
-    }
-}
+//     for (int i = 0; i < v.size(); i++)
+//     {
+//         for (int j = 0; j < v[i].size(); j++)
+//         {
+//             cout << v[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+// // Use of  in STL
+// #include <iostream>
+// #include <vector>
+
+// using namespace std;
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     vector<int> v(n, 45); // in vector
+
+//     for (int i = 0; i < v.size(); i++)
+//     {
+//         cout << v[i] << " ";
+//     }
+//     cout << endl;
+
+//     // for integer
+//     cout << "This is the new Line" << endl;
+//     vector<vector<int>> v1(n, vector<int>(n, 0));
+
+//     for (int i = 0; i < v1.size(); i++)
+//     {
+//         for (int j = 0; j < v1[i].size(); j++)
+//         {
+//             cout << v1[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+
+//     cout << "This is the new Line" << endl;
+//     vector<vector<char>> v2(n, vector<char>(n, '.'));
+
+//     for (int i = 0; i < v1.size(); i++)
+//     {
+//         for (int j = 0; j < v2[i].size(); j++)
+//         {
+//             cout << v2[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+
+//     cout << "This is the new Line" << endl;
+//     vector<string> v3(n, string(n, '.'));
+
+//     for (int i = 0; i < v3.size(); i++)
+//     {
+//         cout << "\"";
+//         for (int j = 0; j < v3[i].size(); j++)
+//         {
+//             cout << v3[i][j] << " ";
+//         }
+//         cout << "\"";
+//         cout << endl;
+//     }
+
+//     cout << "This is the new Line" << endl;
+
+//     vector<vector<string>> solveNQueens(n);
+
+//     for (int i = 0; i < solveNQueens.size(); i++)
+//     {
+//         cout << "Solution " << i + 1 << ":\n";
+
+//         for (int j = 0; j < solveNQueens[i].size(); j++)
+//         {
+//             cout << solveNQueens[i][j] << endl;
+//         }
+//         cout << endl;
+//     }
+// }

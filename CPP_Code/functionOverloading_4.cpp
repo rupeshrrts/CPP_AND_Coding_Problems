@@ -89,33 +89,32 @@
 //     return 0;
 // }
 
-// // Function overloading
-// #include <iostream>
-// #include <string.h>
-// using namespace std;
-// struct student
-// {
-//     int age;
-//     char name[20];
-//     float marks;
-// };
+// Function overloading
+#include <iostream>
+#include <string.h>
+using namespace std;
+struct student
+{
+    int age;
+    char name[20];
+    float marks;
+};
 
-// int main()
-// {
-//     struct student s1 = {20, "Pankaj", 85.5};
-//     struct student s2;
-//     s2.age = 20;
-//     strcpy(s2.name, "Pankaj");
-//     s2.marks = 85.5;
-//     cout << "Enter the age, name and  marks " << endl;
-//     struct student s3;
-//     cin >> s3.age;
-//     cin.ignore(); // to ignore the newline character after reading age
-//     cin.getline(s3.name, 20);
-//     cin >> s3.marks;
-//     cout << "Student 1: Age = " << s3.age << ", Name = " << s3.name << ", Marks = " << s3.marks << endl;
-
-// }
+int main()
+{
+    struct student s1 = {20, "Pankaj", 85.5};
+    struct student s2;
+    s2.age = 20;
+    strcpy(s2.name, "Pankaj");
+    s2.marks = 85.5;
+    cout << "Enter the age, name and  marks " << endl;
+    struct student s3;
+    cin >> s3.age;
+    cin.ignore();             // to ignore the newline character after reading age
+    cin.getline(s3.name, 20); // 20 is the size
+    cin >> s3.marks;
+    cout << "Student 1: Age = " << s3.age << ", Name = " << s3.name << ", Marks = " << s3.marks << endl;
+}
 
 // // Function overloading
 // #include <iostream>

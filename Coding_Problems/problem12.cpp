@@ -176,102 +176,95 @@
 //     return 0;
 // }
 
+// // by vector
+// #include <iostream>
+// #include <vector>
+// using namespace std;
 
-// by vector
-#include <iostream>
-#include <vector>
-using namespace std;
+// bool isSafe(int row, int col, int n, vector<vector<int>> &board)
+// {
+//     int duprow = row;
+//     int dupcol = col;
 
-bool isSafe(int row, int col, int n, vector<vector<int>> &board)
-{
-    int duprow = row;
-    int dupcol = col;
+//     // upper diagonal
+//     while (row >= 0 && col >= 0)
+//     {
+//         if (board[row][col] == 1)
+//             return false;
 
-    // upper diagonal
-    while (row >= 0 && col >= 0)
-    {
-        if (board[row][col] == 1)
-            return false;
+//         row--;
+//         col--;
+//     }
 
-        row--;
-        col--;
-    }
+//     row = duprow;
+//     col = dupcol;
 
-    row = duprow;
-    col = dupcol;
+//     // same row
+//     while (col >= 0)
+//     {
+//         if (board[row][col] == 1)
+//             return false;
 
-    // same row
-    while (col >= 0)
-    {
-        if (board[row][col] == 1)
-            return false;
+//         col--;
+//     }
 
-        col--;
-    }
+//     row = duprow;
+//     col = dupcol;
 
-    row = duprow;
-    col = dupcol;
+//     // lower diagonal
+//     while (row < n && col >= 0)
+//     {
+//         if (board[row][col] == 1)
+//             return false;
 
-    // lower diagonal
-    while (row < n && col >= 0)
-    {
-        if (board[row][col] == 1)
-            return false;
+//         row++;
+//         col--;
+//     }
 
-        row++;
-        col--;
-    }
+//     return true;
+// }
 
-    return true;
-}
+// void solve(int col, int n, vector<vector<int>> &board)
+// {
+//     if (col == n)
+//     {
+//         // print solution
+//         for (int i = 0; i < n; i++)
+//         {
+//             for (int j = 0; j < n; j++)
+//             {
+//                 cout << board[i][j] << " ";
+//             }
+//             cout << endl;
+//         }
+//         cout << endl;
+//         return;
+//     }
 
-void solve(int col, int n, vector<vector<int>> &board)
-{
-    if (col == n)
-    {
-        // print solution
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                cout << board[i][j] << " ";
-            }
-            cout << endl;
-        }
-        cout << endl;
-        return;
-    }
+//     for (int row = 0; row < n; row++)
+//     {
+//         if (isSafe(row, col, n, board))
+//         {
+//             board[row][col] = 1;
 
-    for (int row = 0; row < n; row++)
-    {
-        if (isSafe(row, col, n, board))
-        {
-            board[row][col] = 1;
+//             solve(col + 1, n, board);
 
-            solve(col + 1, n, board);
+//             board[row][col] = 0; // backtrack
+//         }
+//     }
+// }
 
-            board[row][col] = 0; // backtrack
-        }
-    }
-}
+// int main()
+// {
+//     int n;
+//     cin >> n;
 
-int main()
-{
-    int n;
-    cin >> n;
+//     vector<vector<int>> board(n, vector<int>(n, 0));
 
-    vector<vector<int>> board(n, vector<int>(n, 0));
+//     solve(0, n, board);
 
-    solve(0, n, board);
-
-    return 0;
-}
-
-
-
-
-
-
+//     return 0;
+// }
 
 // #include <iostream>
 // #include <vector>
@@ -362,84 +355,190 @@ int main()
 //     return 0;
 // }
 
+// #include <iostream>
+// #include <vector>
+// using namespace std;
 
+// bool isSafe(int row, int col, int n, vector<string> &board)
+// {
+//     int duprow = row;
+//     int dupcol = col;
 
+//     // upper diagonal
+//     while (row >= 0 && col >= 0)
+//     {
+//         if (board[row][col] == 'Q')
+//             return false;
+//         row--;
+//         col--;
+//     }
 
-#include <iostream>
-#include <vector>
-using namespace std;
+//     row = duprow;
+//     col = dupcol;
 
-bool isSafe(int row, int col, int n, vector<string> &board)
-{
-    int duprow = row;
-    int dupcol = col;
+//     // same row
+//     while (col >= 0)
+//     {
+//         if (board[row][col] == 'Q')
+//             return false;
+//         col--;
+//     }
 
-    // upper diagonal
-    while (row >= 0 && col >= 0)
-    {
-        if (board[row][col] == 'Q')
-            return false;
-        row--;
-        col--;
-    }
+//     row = duprow;
+//     col = dupcol;
 
-    row = duprow;
-    col = dupcol;
+//     // lower diagonal
+//     while (row < n && col >= 0)
+//     {
+//         if (board[row][col] == 'Q')
+//             return false;
+//         row++;
+//         col--;
+//     }
 
-    // same row
-    while (col >= 0)
-    {
-        if (board[row][col] == 'Q')
-            return false;
-        col--;
-    }
+//     return true;
+// }
 
-    row = duprow;
-    col = dupcol;
+// void solve(int col, int n, vector<string> &board)
+// {
+//     if (col == n)
+//     {
+//         for (auto row : board)
+//         {
+//             cout << row << endl;
+//         }
+//         cout << endl;
+//         return;
+//     }
 
-    // lower diagonal
-    while (row < n && col >= 0)
-    {
-        if (board[row][col] == 'Q')
-            return false;
-        row++;
-        col--;
-    }
+//     for (int row = 0; row < n; row++)
+//     {
+//         if (isSafe(row, col, n, board))
+//         {
+//             board[row][col] = 'Q';
+//             solve(col + 1, n, board);
+//             board[row][col] = '.'; // backtrack
+//         }
+//     }
+// }
 
-    return true;
-}
+// int main()
+// {
+//     int n;
+//     cin >> n;
 
-void solve(int col, int n, vector<string> &board)
-{
-    if (col == n)
-    {
-        for (auto row : board)
-        {
-            cout << row << endl;
-        }
-        cout << endl;
-        return;
-    }
+//     vector<string> board(n, string(n, '.'));
 
-    for (int row = 0; row < n; row++)
-    {
-        if (isSafe(row, col, n, board))
-        {
-            board[row][col] = 'Q';
-            solve(col + 1, n, board);
-            board[row][col] = '.'; // backtrack
-        }
-    }
-}
+//     solve(0, n, board);
 
-int main()
-{
-    int n;
-    cin >> n;
+//     return 0;
+// }
 
-    vector<string> board(n, string(n, '.'));
+// // leetcodeformet
+// #include <iostream>
+// #include <vector>
+// using namespace std;
 
-    solve(0, n, board);
+// class Solution
+// {
+// public:
+//     // 🔍 Check if safe to place queen
+//     bool isSafe(int row, int col, int n, vector<string> &board)
+//     {
+//         int r = row, c = col;
 
-    return 0;
-}
+//         // upper diagonal
+//         while (r >= 0 && c >= 0)
+//         {
+//             if (board[r][c] == 'Q')
+//                 return false;
+//             r--;
+//             c--;
+//         }
+
+//         r = row;
+//         c = col;
+
+//         // same row (left side)
+//         while (c >= 0)
+//         {
+//             if (board[r][c] == 'Q')
+//                 return false;
+//             c--;
+//         }
+
+//         r = row;
+//         c = col;
+
+//         // lower diagonal
+//         while (r < n && c >= 0)
+//         {
+//             if (board[r][c] == 'Q')
+//                 return false;
+//             r++;
+//             c--;
+//         }
+
+//         return true;
+//     }
+
+//     // 🔁 Backtracking
+//     void solve(int col, int n, vector<string> &board, vector<vector<string>> &ans)
+//     {
+//         if (col == n)
+//         {
+//             ans.push_back(board);
+//             return;
+//         }
+
+//         for (int row = 0; row < n; row++)
+//         {
+//             if (isSafe(row, col, n, board))
+//             {
+//                 board[row][col] = 'Q';
+
+//                 solve(col + 1, n, board, ans);
+
+//                 board[row][col] = '.'; // backtrack
+//             }
+//         }
+//     }
+
+//     // 🎯 Main function (LeetCode format)
+//     vector<vector<string>> solveNQueens(int n)
+//     {
+//         vector<vector<string>> ans;
+
+//         vector<string> board(n, string(n, '.'));
+
+//         solve(0, n, board, ans);
+
+//         return ans;
+//     }
+// };
+
+// // ✅ MAIN FUNCTION (for VS Code)
+// int main()
+// {
+//     int n;
+//     cout << "Enter n: ";
+//     cin >> n;
+
+//     Solution obj;
+//     vector<vector<string>> result = obj.solveNQueens(n);
+
+//     // 🔽 Print all solutions
+//     for (int i = 0; i < result.size(); i++)
+//     {
+//         cout << "Solution " << i + 1 << ":\n";
+
+//         for (int j = 0; j < result[i].size(); j++)
+//         {
+//             cout << result[i][j] << endl;
+//         }
+
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
