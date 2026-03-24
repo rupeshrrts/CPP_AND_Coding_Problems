@@ -18,11 +18,11 @@ bool solve(string input, vector<string> &dict)
             if (prefix == dict[j])
             {
                 return 1;
-                // // recursive call for remaining string
-                // if (solve(input.substr(i), dict)) // agr baki ka anster true hai the mera v truew hai
-                // {
-                //     return 1;
-                // }
+                // recursive call for remaining string
+                if (solve(input.substr(i), dict)) // agr baki ka anster true hai the mera v truew hai
+                {
+                    return 1;
+                }
             }
         }
     }
