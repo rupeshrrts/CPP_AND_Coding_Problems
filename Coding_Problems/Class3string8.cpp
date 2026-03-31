@@ -1,66 +1,70 @@
-#include <iostream>
-using namespace std;
-int main()
-{
-    // string *ptr = new string;
-    // *ptr = "Rupesh";
-    // cout << *ptr << endl;
-    // string s1 = "rupesh";
-    // s1 = "neeraj";
-    // cout << s1 << endl;
+// #include <iostream>
+// #include <cstring>
+// #include <vector>
 
-    // string s;
-    // cout << "Enter the Stirng: " << endl;
-    // getline(cin, s);
-    // cout << s[0] << endl;
-    // s[1] = 't';
-    // cout << s[1] << endl;
-    // cout << s << endl;
+// using namespace std;
+// int main()
+// {
+// string *ptr = new string;
+// *ptr = "Rupesh";
+// cout << *ptr << endl;
+// string s1 = "rupesh";
+// s1 = "neeraj";
+// cout << s1 << endl;
 
-    // string s1 = "Rupesh";
-    // string s2 = "Singh";
-    // string s3 = s1 + " " + s2;
-    // cout << s3 << endl;
+// string s;
+// cout << "Enter the Stirng: " << endl;
+// getline(cin, s);
+// cout << s[0] << endl;
+// s[1] = 't';
+// cout << s[1] << endl;
+// cout << s << endl;
 
-    // // string s4 = "1" + "Rahul"; // const char* + const char*
-    // string s5 = 'i' + "Rahul"; // const char* + const char*
-    // cout << s5 << endl;
-    // string s4 = string("1") + "Rahul";
-    // cout << s4 << endl;
+// string s1 = "Rupesh";
+// string s2 = "Singh";
+// string s3 = s1 + " " + s2;
+// cout << s3 << endl;
 
-    // string s1 = "pankaj";
-    // string s2 = "Sharma";
-    // string s3 = " ";
-    // s1 = '1' + s3 + s2;
-    // s2 = '1' + " " + s2; // cant do '1' is char and " " is const char* so cant combine
+// // string s4 = "1" + "Rahul"; // const char* + const char*
+// string s5 = 'i' + "Rahul"; // const char* + const char*
+// cout << s5 << endl;
+// string s4 = string("1") + "Rahul";
+// cout << s4 << endl;
 
-    // cout << s1;
+// string s1 = "pankaj";
+// string s2 = "Sharma";
+// string s3 = " ";
+// s1 = '1' + s3 + s2;
+// s2 = '1' + " " + s2; // cant do '1' is char and " " is const char* so cant combine
 
-    // array of string
+// cout << s1;
 
-    // string *ptr = new string;     // ek string ka object
-    // string *ptr = new string[10]; // string of array
-    // ptr[0] = "Rupesh";
-    // ptr[1] = "Kuamr";
+// array of string
 
-    string input = "abcde";
-    string s7 = input.substr(1);
-    cout << s7; // bcde
+// string *ptr = new string;     // ek string ka object
+// string *ptr = new string[10]; // string of array
+// ptr[0] = "Rupesh";
+// ptr[1] = "Kuamr";
 
-    string temp;
-    temp += 'a';
-    cout << temp << endl;
-    temp += 'b';
-    cout << temp;
+// string input = "abcde";
+// string s7 = input.substr(1);
+// cout << s7; // bcde
 
-    string input = "ilike";
+// string temp;
+// temp += 'a';
+// cout << temp << endl;
+// temp += 'b';
+// cout << temp;
 
-    for (int i = 1; i <= input.size(); i++)
-    {
-        string prefix = input.substr(0, i); // o means start from 0 and i means kitna element if i =1 means 0 se 1 char lena hai
-        cout << prefix << endl;
-    }
-}
+// string input = "ilike";
+
+// for (int i = 1; i <= input.size(); i++)
+// {
+//     string prefix = input.substr(0, i); // o means start from 0 and i means kitna element if i =1 means 0 se 1 char lena hai
+//     cout << prefix << endl;
+// }
+
+// }
 
 // Benefit of Dynamic Allocation
 // 1️⃣ Size decided at runtime
@@ -106,3 +110,13 @@ int main()
 // delete[] arr;
 
 // Memory stays occupied.
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main()
+{
+    string str = "Rupesh";
+    reverse(str.begin() + 2, str.end());
+    cout << str;
+}
