@@ -39,51 +39,78 @@ int main()
     //     cout << x << " ";
     // }
 
-    class Solution
-    {
-    public:
-        vector<int> intersection(vector<int> &arr1, vector<int> &arr2)
-        {
-            int m = arr1.size();
-            int n = arr2.size();
-
-            set<int> ans;
-
-            sort(arr1.begin(), arr1.end());
-            sort(arr2.begin(), arr2.end());
-
-            int i = 0;
-            int j = 0;
-
-            while (i < m && j < n)
-            {
-                if (arr1[i] == arr2[j])
-                {
-                    ans.insert(arr1[i]);
-                    i++;
-                    j++;
-                }
-                else if (arr1[i] > arr2[j])
-                {
-                    j++;
-                }
-                else
-                {
-                    i++;
-                }
-            }
-            vector<int> v;
-
-            for (auto it : ans)
-            {
-                v.push_back(it);
-            }
-            return v;
-        }
-    };
-    return 0;
+    // return 0;
 }
+// mera wala
+//  class Solution {
+//  public:
+//      vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+//          // multiset<int> ms1(nums1.begin(),nums1.end());
+//          // multiset<int> ms2(nums2.begin(),nums2.end());
+//          set<int> ms2(nums2.begin(),nums2.end());
 
+//         set<int> ms3;
+//         for(int x: nums1){
+//             auto  it = ms2.find(x);
+//             if(it!=ms2.end()){
+//                 ms3.insert(x);
+//                 ms2.erase(it);
+//             }
+//         }
+
+//         vector<int> v;
+
+// for (int x : ms3) {
+//     v.push_back(x);
+// }
+
+//     return v;
+//     }
+// };
+class Solution
+{
+public:
+    vector<int> intersection(vector<int> &arr1, vector<int> &arr2)
+    {
+        int m = arr1.size();
+        int n = arr2.size();
+
+        set<int> ans;
+
+        sort(arr1.begin(), arr1.end());
+        sort(arr2.begin(), arr2.end());
+
+        int i = 0;
+        int j = 0;
+
+        while (i < m && j < n)
+        {
+            if (arr1[i] == arr2[j])
+            {
+                ans.insert(arr1[i]);
+                i++;
+                j++;
+            }
+            else if (arr1[i] > arr2[j])
+            {
+                j++;
+            }
+            else
+            {
+                i++;
+            }
+        }
+        vector<int> v;
+
+        for (auto it : ans)
+        {
+            v.push_back(it);
+        }
+        return v;
+    }
+};
+
+////  optoimized approach
 // #include <iostream>
 // #include <vector>
 // #include <unordered_map>
