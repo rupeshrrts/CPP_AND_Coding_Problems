@@ -41,7 +41,32 @@ int main()
 
     // return 0;
 }
-// mera wala
+
+// ////  best solution with duplicates allowed
+// class Solution {
+// public:
+//     vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+
+//         multiset<int> ms(nums1.begin(),nums1.end());
+//         multiset<int> mm;
+//         for(int x: nums2){
+//             auto it=ms.find(x);
+//             if(it!=ms.end()){
+//                 mm.insert(x);
+//                 ms.erase(it);
+//             }
+//         }
+
+//         vector<int> result;
+//         for(int x:mm){
+//             result.push_back(x);
+//         }
+//         return result;
+//     }
+// };
+
+// unique elements only allowed
+// best solution mera wala
 //  class Solution {
 //  public:
 //      vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
@@ -67,78 +92,47 @@ int main()
 //     return v;
 //     }
 // };
-class Solution
-{
-public:
-    vector<int> intersection(vector<int> &arr1, vector<int> &arr2)
-    {
-        int m = arr1.size();
-        int n = arr2.size();
 
-        set<int> ans;
+// // another solution
+// class Solution
+// {
+// public:
+//     vector<int> intersection(vector<int> &arr1, vector<int> &arr2)
+//     {
+//         int m = arr1.size();
+//         int n = arr2.size();
 
-        sort(arr1.begin(), arr1.end());
-        sort(arr2.begin(), arr2.end());
+//         set<int> ans;
 
-        int i = 0;
-        int j = 0;
+//         sort(arr1.begin(), arr1.end());
+//         sort(arr2.begin(), arr2.end());
 
-        while (i < m && j < n)
-        {
-            if (arr1[i] == arr2[j])
-            {
-                ans.insert(arr1[i]);
-                i++;
-                j++;
-            }
-            else if (arr1[i] > arr2[j])
-            {
-                j++;
-            }
-            else
-            {
-                i++;
-            }
-        }
-        vector<int> v;
+//         int i = 0;
+//         int j = 0;
 
-        for (auto it : ans)
-        {
-            v.push_back(it);
-        }
-        return v;
-    }
-};
-
-////  optoimized approach
-// #include <iostream>
-// #include <vector>
-// #include <unordered_map>
-// using namespace std;
-
-// int main() {
-//     vector<int> nums1 = {1, 2, 2, 1};
-//     vector<int> nums2 = {1, 3, 2, 2, 5, 8};
-
-//     unordered_map<int, int> freq;
-
-//     // Count elements of nums1
-//     for (int x : nums1)
-//         freq[x]++;
-
-//     vector<int> result;
-
-//     // Check nums2
-//     for (int x : nums2) {
-//         if (freq[x] > 0) {
-//             result.push_back(x);
-//             freq[x]--;   // reduce count
+//         while (i < m && j < n)
+//         {
+//             if (arr1[i] == arr2[j])
+//             {
+//                 ans.insert(arr1[i]);
+//                 i++;
+//                 j++;
+//             }
+//             else if (arr1[i] > arr2[j])
+//             {
+//                 j++;
+//             }
+//             else
+//             {
+//                 i++;
+//             }
 //         }
+//         vector<int> v;
+
+//         for (auto it : ans)
+//         {
+//             v.push_back(it);
+//         }
+//         return v;
 //     }
-
-//     // Output
-//     for (int x : result)
-//         cout << x << " ";
-
-//     return 0;
-// }
+// };

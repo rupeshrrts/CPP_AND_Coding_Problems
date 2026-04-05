@@ -2,5 +2,9 @@
     "files.autoSave": "onFocusChange",
     "editor.wordWrap": "on",
     "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "code-runner.runInTerminal": true,
+    "terminal.integrated.allowInUntrustedWorkspace": true,
+    "terminal.integrated.accessibleViewFocusOnCommandExecution": true,
+    "terminal.integrated.accessibleViewPreserveCursorPosition": true
 }
