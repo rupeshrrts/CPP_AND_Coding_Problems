@@ -4,8 +4,10 @@
     "editor.defaultFormatter": "ms-vscode.cpptools",
     "editor.formatOnSave": true,
     "code-runner.runInTerminal": true,
-    "terminal.integrated.allowInUntrustedWorkspace": true,
+    "terminal.integrated.allowInUntrustedWorkspace": false,
     "terminal.integrated.accessibleViewFocusOnCommandExecution": true,
-    "terminal.integrated.accessibleViewPreserveCursorPosition": true,
-    "editor.accessibilitySupport": "off"
+    "terminal.integrated.accessibleViewPreserveCursorPosition": false,
+    "editor.accessibilitySupport": "off",
+    "terminal.integrated.allowChords": false,
+    "terminal.integrated.altClickMovesCursor": false
 }
