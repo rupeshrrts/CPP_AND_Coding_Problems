@@ -89,15 +89,11 @@ public:
 
 int main()
 {
-
     vector<int> nums1 = {1, 3};
     vector<int> nums2 = {2};
 
     Solution obj;
-
     double median = obj.findMedianSortedArrays(nums1, nums2);
-
     cout << "Median = " << median << endl;
-
     return 0;
 }
