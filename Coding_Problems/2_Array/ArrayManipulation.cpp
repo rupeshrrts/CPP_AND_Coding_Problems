@@ -65,7 +65,6 @@ int main()
 
     // final array (store kar rahe hain)
     vector<long long> finalArr(n + 1);
-
     long long sum = 0;
 
     for (int i = 1; i <= n; i++)

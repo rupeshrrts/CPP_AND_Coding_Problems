@@ -63,3 +63,29 @@
 //         return v;
 //     }
 // };
+
+// https://www.geeksforgeeks.org/problems/union-of-two-sorted-arrays-1587115621/1
+
+// class Solution {
+//   public:
+//     vector<int> findUnion(vector<int> &a, vector<int> &b) {
+//         // code here
+
+//         set<int> s;
+
+//         for(int x : a){
+//             s.insert(x);
+//         }
+
+//          for(int y : b){
+//             s.insert(y);
+//         }
+
+//         vector<int> result;
+//         for( int m: s){
+//             result.push_back(m);
+//         }
+
+//         return result;
+//     }
+// };
