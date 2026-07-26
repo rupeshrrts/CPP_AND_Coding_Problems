@@ -5,9 +5,10 @@
     "editor.formatOnSave": true,
     "code-runner.runInTerminal": true,
     "terminal.integrated.allowInUntrustedWorkspace": false,
-    "terminal.integrated.accessibleViewFocusOnCommandExecution": true,
+    "terminal.integrated.accessibleViewFocusOnCommandExecution": false,
     "terminal.integrated.accessibleViewPreserveCursorPosition": false,
     "editor.accessibilitySupport": "off",
     "terminal.integrated.allowChords": false,
     "terminal.integrated.altClickMovesCursor": false
+    
 }
