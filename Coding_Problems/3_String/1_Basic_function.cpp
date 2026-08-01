@@ -3,7 +3,6 @@
 // #include <stdio.h>
 // #include <conio.h>
 // #include <cstring>
-
 // void mystrcpy(char *dest, char *src)
 // {
 //     while (*src != '\0')
@@ -19,17 +18,15 @@
 //     char str2[20] = "KumarSingh";
 //     puts(str);
 //     puts(str2);
-
 //     mystrcpy(str, str2);
+//     printf("After Function call\n");
 //     puts(str);
 // }
 
 // // 2 strlen
-
 // #include <stdio.h>
 // #include <conio.h>
 // #include <cstring>
-
 // int mystrlen(const char *src)
 // {
 //     int count = 0;
@@ -112,7 +109,7 @@
 //     puts(str2);
 // }
 
-// // 4 strcat
+// // 5 strupr and strlwr
 // #include <stdio.h>
 // #include <string.h>
 
@@ -158,7 +155,7 @@
 
 // int mystrcmp(char *dest, char *str)
 // {
-//     // if mathc all the char of the string then return -1 otherwise return diff.
+//     // if match all the char of the string then return -1 otherwise return diff.
 
 //     int diff = 0;
 //     while (*str != '\0' || *dest != '\0')
@@ -181,52 +178,51 @@
 //     printf("%d", mystrcmp(str1, str2));
 // }
 
-// 7 mystrstr
+// // 7 mystrstr
+// #include <stdio.h>
+// #include <string.h>
+// #include <stdio.h>
 
-#include <stdio.h>
-#include <string.h>
-#include <stdio.h>
+// char *mystrstr(const char *str, const char *substr)
+// {
+//     // If substring is empty
+//     if (*substr == '\0')
+//         return (char *)str;
 
-char *mystrstr(const char *str, const char *substr)
-{
-    // If substring is empty
-    if (*substr == '\0')
-        return (char *)str;
+//     while (*str != '\0')
+//     {
+//         const char *p1 = str;
+//         const char *p2 = substr;
 
-    while (*str != '\0')
-    {
-        const char *p1 = str;
-        const char *p2 = substr;
+//         // Compare characters
+//         while (*p1 == *p2 && *p2 != '\0')
+//         {
+//             p1++;
+//             p2++;
+//         }
 
-        // Compare characters
-        while (*p1 == *p2 && *p2 != '\0')
-        {
-            p1++;
-            p2++;
-        }
+//         // If full substring matched
+//         if (*p2 == '\0')
+//             return (char *)str;
 
-        // If full substring matched
-        if (*p2 == '\0')
-            return (char *)str;
+//         str++;
+//     }
 
-        str++;
-    }
+//     return NULL;
+// }
+// int main()
+// {
+//     char str1[] = "Kumar Singh";
+//     char str2[] = "Singh";
 
-    return NULL;
-}
-int main()
-{
-    char str1[] = "Kumar Singh";
-    char str2[] = "Singh";
+//     char *result = mystrstr(str1, str2);
 
-    char *result = mystrstr(str1, str2);
-
-    if (result != NULL)
-    {
-        printf("Found at index: %ld\n", result - str1);
-    }
-    else
-    {
-        printf("Not found\n");
-    }
-}
+//     if (result != NULL)
+//     {
+//         printf("Found at index: %ld\n", result - str1);
+//     }
+//     else
+//     {
+//         printf("Not found\n");
+//     }
+// }

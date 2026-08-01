@@ -9,6 +9,8 @@
     "terminal.integrated.accessibleViewPreserveCursorPosition": false,
     "editor.accessibilitySupport": "off",
     "terminal.integrated.allowChords": false,
-    "terminal.integrated.altClickMovesCursor": false
+    "terminal.integrated.altClickMovesCursor": false,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.preserveFocus": false
     
 }
