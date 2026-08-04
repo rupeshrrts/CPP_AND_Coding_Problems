@@ -41,7 +41,7 @@ public:
 int main()
 {
     Solution obj;
-    cout << obj.countAndSay(5);
+    cout << obj.countAndSay(3);
     return 0;
 }
 

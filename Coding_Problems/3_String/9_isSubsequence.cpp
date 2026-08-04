@@ -12,12 +12,21 @@ public:
 
         int i = 0, j = 0;
 
-        for (i = 0; i < n && j < m; i++)
+        // for (i = 0; i < n && j < m; i++)
+        // {
+        //     if (s1[i] == s2[j])
+        //     {
+        //         j++;
+        //     }
+        // }
+
+        while (i < n && j < m)
         {
             if (s1[i] == s2[j])
             {
                 j++;
             }
+            i++; // when while is use
         }
 
         return j == m;
@@ -28,13 +37,13 @@ int main()
 {
     Solution obj;
 
-    string s1, s2;
+    string s1 = "adskd", s2 = "adk";
 
-    cout << "Enter main string (s1): ";
-    cin >> s1;
+    // cout << "Enter main string (s1): ";
+    // cin >> s1;
 
-    cout << "Enter subsequence string (s2): ";
-    cin >> s2;
+    // cout << "Enter subsequence string (s2): ";
+    // cin >> s2;
 
     if (obj.isSubsequence(s2, s1))
     {
