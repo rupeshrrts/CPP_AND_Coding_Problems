@@ -34,7 +34,6 @@
 //         }
 //         else
 //         {
-
 //             // Convert character to array index
 //             // Example:
 //             // 'A' - 'A' = 0
@@ -45,7 +44,6 @@
 //             answer += str[index];
 //         }
 //     }
-
 //     // Return the final sequence
 //     return answer;
 // }
