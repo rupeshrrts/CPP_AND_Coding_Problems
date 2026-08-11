@@ -14,22 +14,25 @@ struct Node
     }
 };
 
-class Solution
-{
-public:
-    int getCount(Node *head)
-    {
-        int count = 0;
-
-        while (head != NULL)
-        {
-            count++;
-            head = head->next;
-        }
-
-        return count;
-    }
+/*
+Definition for Linked List
+struct Node {
+    int data;
+    struct Node* next;
 };
+*/
+int getCount(struct Node *head)
+{
+    // code here
+    struct Node *Ptr = head;
+    int c = 0;
+    while (Ptr != NULL)
+    {
+        c++;
+        Ptr = Ptr->next;
+    }
+    return c;
+}
 
 int main()
 {
@@ -40,8 +43,7 @@ int main()
     head->next->next = new Node(30);
     head->next->next->next = new Node(40);
 
-    Solution obj;
-    int totalNodes = obj.getCount(head);
+    int totalNodes = getCount(head);
     cout << "Number of nodes: " << totalNodes << endl;
 
     return 0;
