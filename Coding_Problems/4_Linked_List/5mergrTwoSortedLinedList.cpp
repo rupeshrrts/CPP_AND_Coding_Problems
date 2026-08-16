@@ -6,7 +6,6 @@ class Node
 public:
     int data;
     Node *next;
-
     Node(int x)
     {
         data = x;
@@ -21,13 +20,10 @@ public:
     {
 
         Node *first, *last;
-
         if (head1 == NULL)
             return head2;
-
         if (head2 == NULL)
             return head1;
-
         // Select first node
         if (head1->data < head2->data)
         {
@@ -39,11 +35,9 @@ public:
             first = last = head2;
             head2 = head2->next;
         }
-
         // Merge
         while (head1 && head2)
         {
-
             if (head1->data < head2->data)
             {
                 last->next = head1;
@@ -57,14 +51,11 @@ public:
                 head2 = head2->next;
             }
         }
-
         // Attach remaining nodes
         if (head1)
             last->next = head1;
-
         if (head2)
             last->next = head2;
-
         return first;
     }
 };
@@ -72,23 +63,17 @@ public:
 // Insert at end
 void insert(Node *&head, int x)
 {
-
     Node *newNode = new Node(x);
-
     if (head == NULL)
     {
         head = newNode;
         return;
     }
-
     Node *temp = head;
-
     while (temp->next)
         temp = temp->next;
-
     temp->next = newNode;
 }
-
 // Print linked list
 void print(Node *head)
 {
@@ -110,7 +95,6 @@ int main()
     insert(head1, 1);
     insert(head1, 3);
     insert(head1, 5);
-
     // List2: 2->4->6
     insert(head2, 2);
     insert(head2, 4);
@@ -121,7 +105,6 @@ int main()
 
     cout << "List 2: ";
     print(head2);
-
     Solution obj;
 
     Node *merged = obj.sortedMerge(head1, head2);
@@ -131,3 +114,55 @@ int main()
 
     return 0;
 }
+
+// link list
+//  /**
+//   * Definition for singly-linked list.
+//   * struct ListNode {
+//   *     int val;
+//   *     ListNode *next;
+//   *     ListNode() : val(0), next(nullptr) {}
+//   *     ListNode(int x) : val(x), next(nullptr) {}
+//   *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//   * };
+//   */
+//  class Solution {
+//  public:
+//      ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+//          ListNode *first , *last;
+//          if(list1==NULL) return list2;
+//          if(list2==NULL) return list1;
+
+//         if(list1->val<=list2->val){
+//             first=last=list1;
+//             list1 = list1->next;
+//         }
+//         else{
+//             first=last=list2;
+//             list2 = list2->next;
+//         }
+//         while(list1&&list2)
+//         {
+//         if((list1->val)<= (list2->val)){
+
+//             last->next=list1;
+//             last=list1;
+//             list1=list1->next;
+//         }
+//         else{
+//             last->next=list2;
+//             last=list2;
+//             list2=list2->next;
+//         }
+
+//         }
+//         if(list1)
+//             last->next = list1;
+
+//         if(list2)
+//             last->next = list2;
+
+//         return first;
+
+//     }
+// };

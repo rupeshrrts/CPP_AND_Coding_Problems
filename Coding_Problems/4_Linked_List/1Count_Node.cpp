@@ -1,3 +1,43 @@
+// 1.  707  Design Linked List
+//         ↓
+// 2.  203  Remove Linked List Elements
+//         ↓
+// 3.  876  Middle of the Linked List
+//         ↓
+// 4.  206  Reverse Linked List
+//         ↓
+// 5.  141  Linked List Cycle
+//         ↓
+// 6.  160  Intersection of Two Linked Lists
+//         ↓
+// 7.  19   Remove Nth Node From End
+//         ↓
+// 8.  234  Palindrome Linked List
+//         ↓
+// 9.  21   Merge Two Sorted Lists
+//         ↓
+// 10. 83   Remove Duplicates
+//         ↓
+// 11. 82   Remove Duplicates II
+//         ↓
+// 12. 92   Reverse Linked List II
+//         ↓
+// 13. 142  Linked List Cycle II
+//         ↓
+// 14. 2    Add Two Numbers
+//         ↓
+// 15. 24   Swap Nodes in Pairs
+//         ↓
+// 16. 328  Odd Even Linked List
+//         ↓
+// 17. 61   Rotate List
+//         ↓
+// 18. 138  Copy List with Random Pointer
+//         ↓
+// 19. 148  Sort List
+//         ↓
+// 20. 25   Reverse Nodes in k-Group
+
 #include <iostream>
 using namespace std;
 

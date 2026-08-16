@@ -116,3 +116,107 @@ int main()
 
     return 0;
 }
+
+// Note submitted;
+
+// //// leetcode 24. Swap Nodes in Pairs
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     ListNode* swapPairs(ListNode* head) {
+
+//         ListNode* ptr=head;
+//         while(ptr&&ptr->next){
+//             swap(ptr->val,ptr->next->val);
+//             ptr=ptr->next->next;
+//         }
+
+//         return head;
+
+//     }
+// };
+
+// ///forleetcode 24. Swap Nodes in Pairs
+
+// class Solution {
+// public:
+
+//     ListNode* swaps(ListNode* first, ListNode* second) {
+//         first->next = second->next;
+//         second->next = first;
+//         return second;
+//     }
+
+//     ListNode* swapPairs(ListNode* head) {
+//         if (head == nullptr || head->next == nullptr)
+//             return head;
+//         ListNode* ptr = head;
+
+//         // First pair
+//         ListNode* first = ptr;
+//         ListNode* second = ptr->next;
+//         head = swaps(first, second);
+//         // ptr becomes the first node of the swapped pair
+//         ptr = first;
+
+//         while (ptr->next && ptr->next->next) {
+//             first = ptr->next;
+//             second = first->next;
+//             ptr->next = swaps(first, second);
+//             ptr = first;
+//         }
+//         return head;
+//     }
+// };
+
+// //
+
+// class Solution {
+// public:
+
+//     ListNode* swapPairs(ListNode* head) {
+
+//         if (head == nullptr || head->next == nullptr)
+//             return head;
+
+//         ListNode* ptr = head;
+
+//         // First pair
+//         ListNode* first = ptr;
+//         ListNode* second = ptr->next;
+
+//         first->next = second->next;
+//         second->next = first;
+
+//         // New head after swapping first pair
+//         head = second;
+
+//         // ptr becomes first node of swapped pair
+//         ptr = first;
+
+//         while (ptr->next && ptr->next->next) {
+
+//             first = ptr->next;
+//             second = first->next;
+
+//             // Relink nodes
+//             first->next = second->next;
+//             second->next = first;
+//             ptr->next = second;
+
+//             // Move to next pair
+//             ptr = first;
+//         }
+
+//         return head;
+//     }
+// };

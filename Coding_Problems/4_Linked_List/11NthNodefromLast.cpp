@@ -90,3 +90,45 @@ int main()
          << k << "th node from end = " << ans << endl;
     return 0;
 }
+
+// note submited
+// // leetcode 19. Remove Nth Node From End of List
+
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     ListNode* removeNthFromEnd(ListNode* head, int n) {
+//         int count =0;
+//         ListNode * temp=head;
+
+//         while(temp!=nullptr){
+//             count++;
+//             temp=temp->next;
+//         }
+
+//         int dist=count-n-1;
+//         ListNode *ptr=head;
+
+//         if (dist < 0) {
+//             return head->next;
+//         }
+//        while(dist--){
+//         ptr=ptr->next;
+//        }
+//        // Delete nth node from the end
+//         ListNode* del = ptr->next;
+//         ptr->next=ptr->next->next;
+
+//         delete del;
+//         return head;
+//     }
+// };

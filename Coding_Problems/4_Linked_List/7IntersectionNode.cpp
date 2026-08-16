@@ -185,3 +185,60 @@ int main()
     if (ans)
         cout << "Intersection node: " << ans->data;
 }
+
+// // leetcode 160. Intersection of Two Linked Lists
+
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode(int x) : val(x), next(NULL) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+
+//     int lenA = 0;
+//     int lenB = 0;
+
+//     ListNode* tempA = headA;
+//     ListNode* tempB = headB;
+
+//     // Count length of A
+//     while (tempA != NULL) {
+//         lenA++;
+//         tempA = tempA->next;
+//     }
+
+//     // Count length of B
+//     while (tempB != NULL) {
+//         lenB++;
+//         tempB = tempB->next;
+//     }
+
+//     int diff = abs(lenA-lenB);
+
+//         ListNode* a = headA;
+//         ListNode* b = headB;
+
+//         if (lenA > lenB) {
+//             for (int i = 0; i < diff; i++) {
+//                 a = a->next;
+//             }
+//         }
+//         else {
+//             for (int i = 0; i < diff; i++) {
+//                 b = b->next;
+//             }
+//         }
+
+//         while(a!=b){
+//             a=a->next;
+//             b=b->next;
+//         }
+//         return a;
+
+//     }
+// };
