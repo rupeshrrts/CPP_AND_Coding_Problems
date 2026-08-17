@@ -18,7 +18,7 @@
 //         while(ptr->next!=nullptr){
 //             if(ptr->val==ptr->next->val){
 //                 ptr->next=ptr->next->next;
-
+//
 //             }
 //             else{
 //                 ptr=ptr->next;
